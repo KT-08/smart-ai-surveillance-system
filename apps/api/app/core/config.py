@@ -6,9 +6,7 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     ENVIRONMENT: str = "development"
 
-    DATABASE_URL: str = (
-        "postgresql+asyncpg://postgres:postgres@localhost:5432/surveillance_db"
-    )
+    DATABASE_URL: str
 
     model_config = SettingsConfigDict(
         env_file=".env",
