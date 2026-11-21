@@ -1,10 +1,11 @@
-
 from fastapi import FastAPI
+from apps.api.app.core.config import settings
+
 
 app = FastAPI(
-    title="Smart AI Public Surveillance System",
+    title=settings.APP_NAME,
     description="Backend API for the Public Surveillance Platform",
-    version="1.0.0"
+    version=settings.APP_VERSION
 )
 
 
@@ -18,5 +19,6 @@ async def root():
 @app.get("/health")
 async def health_check():
     return {
-        "status": "healthy"
+        "status": "healthy",
+        "environment": settings.ENVIRONMENT
     }
