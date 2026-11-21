@@ -221,3 +221,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Environment variables
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+
+# Test and coverage
+.coverage
+coverage.xml
+
+# Logs
+logs/
+*.log
