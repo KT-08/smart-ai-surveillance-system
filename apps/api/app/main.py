@@ -1,5 +1,8 @@
+
 from fastapi import FastAPI
+
 from apps.api.app.core.config import settings
+from apps.api.app.api.v1.router import api_router
 
 
 app = FastAPI(
@@ -9,10 +12,17 @@ app = FastAPI(
 )
 
 
+# Register API routes
+app.include_router(
+    api_router,
+    prefix="/api/v1"
+)
+
+
 @app.get("/")
 async def root():
     return {
-        "message": "Smart AI Surveillance API is running"
+        "message": "Smart AI Public Surveillance System API is running"
     }
 
 
